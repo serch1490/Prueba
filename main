@@ -1,0 +1,30 @@
+
+//import 'package:componentes/screens/listview_screen.dart';
+import 'package:componentes/routes/app_routes.dart';
+import 'package:componentes/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  
+  const MyApp({Key? key}) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Material App',
+      //home: const ListView2Screen(),
+      initialRoute: AppRoutes.inicialroute,
+      routes: AppRoutes.getAppRoutes(),
+
+      //  ======  En caso de que la ruta no existe te lleva a una ruta de alerta que 
+      //  ====== creamos nosotros mismos ruta alterna
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      theme: AppTheme.ligthTheme
+      
+    );
+  }
+} 
